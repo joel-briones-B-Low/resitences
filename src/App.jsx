@@ -2,9 +2,9 @@ import { useState } from 'react'
 import appLogo from './assets/resistance.png'
 import PWABadge from './PWABadge.jsx'
 import './App.css'
-import TablaValoresResistencias from './components/tabla_valores_resistencias/tabla_valores_resistencias.jsx'
 import SvgResistencia from './components/svg/svg_resistencia.jsx'
 import SeleccionColorBanda from './components/color_banda/color_banda.jsx'
+import TablaValoresResistencias from './components/tabla/tabla_valores_resistencias.jsx'
 
 function App() {
   const calcularResistencia = () => {
