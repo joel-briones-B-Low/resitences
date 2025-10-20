@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import './../tabla/tabla_valores_resistencias.css';
+
 import RowValorResistencia from './row/row_valor_resistencias';
 
 function TablaValoresResistencias() {
@@ -131,40 +131,35 @@ function TablaValoresResistencias() {
   const [colorSelected, setColorSelected] = useState(null);
 
   return (
-    <>
-      <div className="resistor-table-container">
-        <div className="header">
-
-          <h4 className="title">Código de colores</h4>
-        </div>
-
-        <div className="table-wrapper">
-          <table className="resistor-table">
-            <thead>
-              <tr>
-                <th className='encabezados'>COLOR</th>
-                <th className='encabezados'>VALOR 1</th>
-                <th className='encabezados'>VALOR 2</th>
-                <th className='encabezados'>VALOR 3</th>
-                <th className='encabezados'>MULTIPLICADOR</th>
-                <th className='encabezados'>TOLERANCIA</th>
-              </tr>
-            </thead>
-            <tbody>
-              {resistorData.map((resistor, index) => (
-                <RowValorResistencia
-                  key={index}
-                  data={resistor}
-                  isSelected={colorSelected === resistor.color}
-                  onClick={() => setColorSelected(resistor.color)}
-                />
-              ))}
-            </tbody>
-          </table>
-        </div>
-
+    <div className="max-w-5xl mx-auto p-4 font-sans">
+      <div className="flex items-center justify-between p-4 border-2 border-black mb-0 bg-white gap-5 dark:bg-gray-900 dark:border-gray-700">
+        <h4 className="text-2xl font-bold text-center flex-1 text-gray-900 dark:text-gray-100">Código de colores</h4>
       </div>
-    </>
+      <div className="overflow-x-auto border-2 border-black border-t-0 dark:border-gray-700">
+        <table className="w-full border-collapse bg-white dark:bg-gray-900">
+          <thead>
+            <tr className="bg-gray-100 dark:bg-gray-800">
+              <th className="px-3 py-2 text-center font-bold text-sm border border-black dark:border-gray-700 whitespace-nowrap">COLOR</th>
+              <th className="px-3 py-2 text-center font-bold text-sm border border-black dark:border-gray-700 whitespace-nowrap">VALOR 1</th>
+              <th className="px-3 py-2 text-center font-bold text-sm border border-black dark:border-gray-700 whitespace-nowrap">VALOR 2</th>
+              <th className="px-3 py-2 text-center font-bold text-sm border border-black dark:border-gray-700 whitespace-nowrap">VALOR 3</th>
+              <th className="px-3 py-2 text-center font-bold text-sm border border-black dark:border-gray-700 whitespace-nowrap">MULTIPLICADOR</th>
+              <th className="px-3 py-2 text-center font-bold text-sm border border-black dark:border-gray-700 whitespace-nowrap">TOLERANCIA</th>
+            </tr>
+          </thead>
+          <tbody>
+            {resistorData.map((resistor, index) => (
+              <RowValorResistencia
+                key={index}
+                data={resistor}
+                isSelected={colorSelected === resistor.color}
+                onClick={() => setColorSelected(resistor.color)}
+              />
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
   );
 
 }
