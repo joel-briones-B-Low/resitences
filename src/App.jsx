@@ -3,7 +3,7 @@ import appLogo from './assets/resistance.png'
 import PWABadge from './PWABadge.jsx'
 import './App.css'
 import TablaValoresResistencias from './components/tabla_valores_resistencias/tabla_valores_resistencias.jsx'
-import SvgResistencia from './components/svg_resistencia/svg_resistencia.jsx'
+import SvgResistencia from './components/svg/svg_resistencia.jsx'
 import SeleccionColorBanda from './components/color_banda/color_banda.jsx'
 
 function App() {
